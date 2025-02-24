@@ -1,0 +1,207 @@
+
+1:
+
+class Cpu
+{
+	int price=665757;
+	class Processor
+	{
+		int cores=5;
+		String manufacturer="intel";
+		void pro()
+		{
+			System.out.println(manufacturer+"core i"+cores);
+		}
+	}
+	static class Ram
+	{
+		int memory=1;
+		String manufacturer="dsffc  ";
+		void raminfo()
+		{
+			System.out.println(manufacturer+ memory+" TB");			
+		}
+	}
+
+
+public static void main(String args[])
+{
+	Cpu obj1=new Cpu();
+	Cpu.Processor obj2=obj1.new Processor();
+	Cpu.Ram obj3=new Cpu.Ram();
+	obj2.pro();
+	obj3.raminfo();
+}
+}
+
+OUTPUT
+intelcore i5
+dsffc  1 TB
+
+-------------------------------------------------------------------------------------------------
+
+
+2
+
+import java.util.*;
+class Student
+{
+	String name;
+	int rollno;
+	int[] mark=new int[4];
+	
+	Scanner s=new Scanner(System.in);
+
+	void read()
+	{
+	System.out.println("enter the name:");
+	name=s.nextLine();
+	System.out.println("enter the rollno:");
+	rollno=s.nextInt();
+	System.out.println("enter the marks:");
+		for(int i=0;i<4;i++)
+		{
+			mark[i]=s.nextInt();
+		}
+	}
+
+	void check()
+	{
+	int sum=0;
+	for(int i=0;i<4;i++)
+	{
+		sum=sum+mark[i];
+	}
+	System.out.println("the total marks:"+sum);
+
+	int perc=(sum*100)/400;
+	System.out.println("the percentage of marks:"+perc);	
+	
+	}
+public static void main(String args[])
+{
+	Student m1=new Student();
+	m1.read();
+	m1.check();
+}
+}
+
+
+
+
+OUTPUT
+
+enter the name:
+sreedev
+enter the rollno:
+53
+enter the marks:
+34
+43
+75
+96
+the total marks:248
+the percentage of marks:62
+
+
+-----------------------------------------------------------------------------------------------
+
+
+3
+
+
+import java.util.Scanner;
+
+class Matrix
+{
+
+	int i,j,r1,r2,c1,c2;
+	int[][] m1=new int[5][5];
+	int[][] m2=new int[5][5];
+	int[][] m3=new int[5][5];
+	 
+	void read()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the number of rows in first matrix");
+		r1=s.nextInt();
+		System.out.println("enter the number of columns in first matrix");
+		c1=s.nextInt();
+		System.out.println("enter the number of rows in second matrix");
+		r2=s.nextInt();
+		System.out.println("enter the number of columns in second matrix");
+		c2=s.nextInt();
+
+
+
+		System.out.println("the first matrix:");
+		for(i=0;i<r1;i++)
+		{
+			for(j=0;j<c1;j++)
+			{
+				m1[i][j]=s.nextInt();
+			}
+		}
+
+		
+
+		System.out.println("the second matrix:");
+		for(i=0;i<r2;i++)
+		{
+			for(j=0;j<c2;j++)
+			{
+				m2[i][j]=s.nextInt();
+			}
+		}
+	}
+
+	void add()
+	{
+
+		System.out.println("the sum matrix:");
+		for(int i=0;i<r1;i++)
+		{
+			for(int j=0;j<c1;j++)
+			{
+				m3[i][j]=m1[i][j]+m2[i][j];
+				System.out.print(m3[i][j]+"\t");
+			}
+		System.out.println("\n");
+		}
+	}
+public static void main(String args[])
+{
+	Matrix obj=new Matrix();
+	obj.read();
+	obj.add();
+}
+}
+
+
+OUTPUT
+
+enter the number of rows in first matrix
+2
+enter the number of columns in first matrix
+2
+enter the number of rows in second matrix
+2
+enter the number of columns in second matrix
+2
+the first matrix:
+2
+3
+4
+5
+the second matrix:
+2
+3
+4
+5
+the sum matrix:
+4	6	
+
+8	10	
+
+
+
