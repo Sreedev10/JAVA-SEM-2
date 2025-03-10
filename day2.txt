@@ -205,3 +205,349 @@ the sum matrix:
 
 
 
+-------------------------------------------------------------------------------------------------------------------------------------
+03/03/2025
+
+
+Sy-matrix
+
+
+
+import java.util.Scanner;
+
+class Matrix
+{
+	int flag=0;
+	int i,j,r1,c1;
+	int[][] m=new int[5][5];
+	int[][] n=new int[5][5];
+
+	void read()
+	{
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the number of rows in matrix");
+		r1=s.nextInt();
+		System.out.println("enter the number of columns in matrix");
+		c1=s.nextInt();
+	
+		System.out.println("the matrix:");
+		for(i=0;i<r1;i++)
+		{
+			for(j=0;j<c1;j++)
+			{
+				m[i][j]=s.nextInt();
+			}
+		}
+
+
+	}
+	void trans()
+	{
+
+		
+		for(int i=0;i<r1;i++)
+		{
+			for(int j=0;j<c1;j++)
+			{
+				n[j][i]=m[i][j];
+			}	
+		}
+		
+		for(int i=0;i<r1;i++)
+		{
+			for(int j=0;j<c1;j++)
+			{
+				if(m[i][j]!=n[i][j])
+				{
+					flag=1;
+					break;
+				}
+			}	
+		}
+	
+	//void check()
+	//{
+		if(flag==1)
+		{
+			System.out.println("not Symmetric ");		
+		}
+		else
+		{
+			System.out.println(" Symmetric");
+		}
+	}
+	
+public static void main(String args[])
+{
+	Matrix obj=new Matrix();
+	obj.read();
+	obj.trans();
+	//obj.check();
+}
+}
+
+
+
+
+OUTPUT:
+
+
+
+enter the number of rows in matrix
+2
+enter the number of columns in matrix
+2
+the matrix:
+3
+4
+5
+6
+not Symmetric 
+s2mcabatch2@cscl6d25:~/Desktop/sk53/day2$ javac sy-matrix.java
+s2mcabatch2@cscl6d25:~/Desktop/sk53/day2$ java Matrix
+enter the number of rows in matrix
+2
+enter the number of columns in matrix
+2
+the matrix:
+3
+4
+4
+3
+ Symmetric
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+array-element search
+
+
+import java.util.Scanner;
+
+class Search
+{
+	int[] array=new int[4];
+	int i;
+	int n;
+	int flag=0;
+	Scanner s=new Scanner(System.in);
+	void read()
+	{
+
+		System.out.println("enter the values:");
+		for(i=0;i<4;i++)
+		{
+			array[i]=s.nextInt();
+		}
+	}
+
+	void check()
+	{
+		System.out.println("enter the value for search:");
+		n=s.nextInt();
+		for(i=0;i<4;i++)
+		{
+			if(array[i]==n)
+			{
+			flag=1;
+			}	
+		}
+		
+	}
+	void display()
+	{
+		if(flag==1)
+		{
+			System.out.println("found");				
+		}
+		else
+		{
+			System.out.println("not found");				
+		}
+	}
+
+public static void main(String args[])
+{
+	Search obj=new Search();
+	obj.read();
+        obj.check();
+	obj.display();
+}
+}
+
+
+
+
+output:
+
+	enter the values:
+2
+3
+4
+5
+enter the value for search:
+3
+found
+s2mcabatch2@cscl6d25:~/Desktop/sk53/day-3$ javac elementsearch.java
+s2mcabatch2@cscl6d25:~/Desktop/sk53/day-3$ java Search
+enter the values:
+3
+4
+5
+6
+enter the value for search:
+7
+not found
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Array of object
+
+import java.util.*;
+class Employee
+{
+	int eno,salary;
+	int a;
+	String ename;
+	Scanner s=new Scanner(System.in);
+	void read()
+	{
+
+		System.out.println("enter employee no.:");		
+		eno=s.nextInt();
+		System.out.println("enter employee name:");		
+		ename=s.next();
+		System.out.println("enter the salary: ");		
+		salary=s.nextInt();
+		
+	}
+
+	
+public static void main(String args[])
+{
+	Scanner s=new Scanner(System.in);
+	int i;
+	Employee obj[]=new Employee[5];
+	for(i=0;i<3;i++)
+	{
+	obj[i]=new Employee();
+	obj[i].read();
+	
+	}
+	System.out.println("enter the eno for search:");		
+	int a=s.nextInt();
+	for(i=0;i<3;i++)
+	{
+		if(obj[i].eno==a)
+		{
+			System.out.println("search element found:  emp no:"+obj[i].eno+"  empname:"+obj[i].ename+"  emp salary:"+obj[i].salary);
+break;			
+		}
+		else
+		{
+			System.out.println("search element not found");	
+break;	
+				
+		}
+	}
+}
+}
+
+
+OUTPUT:
+
+enter employee no.:
+1
+enter employee name:
+dfhdf
+enter the salary: 
+3245345
+enter employee no.:
+2
+enter employee name:
+gdfhft
+enter the salary: 
+546546
+enter employee no.:
+3
+enter employee name:
+dfhdfh
+enter the salary: 
+65767
+enter the eno for search:
+1
+search element found:  emp no:1  empname:dfhdf  emp salary:3245345
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+10/03.2025
+
+
+Character Sort->
+
+
+import java.util.Arrays;
+
+class main
+{
+public static void main(String args[])
+{
+String str="sreedev";
+char[] charArray=str.toCharArray();
+Arrays.sort(charArray);
+System.out.println("sorted characters:"+ new String(charArray));
+}
+}
+
+OUTPUT:
+
+sorted characters:deeersv
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+String Sort->
+
+import java.util.Arrays;
+class Stringsort
+{
+	public static void main(String args[])
+	{
+		String[] words={"sgsxg","dsgxgvbxf","gdvdg","dzgf","sdghdrfg"};
+	Arrays.sort(words);
+	System.out.println("sorted words");
+	for(String word: words)
+	System.out.println(word);
+	}
+}
+
+OUTPUT:
+
+sorted words
+dsgxgvbxf
+dzgf
+gdvdg
+sdghdrfg
+sgsxg
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
