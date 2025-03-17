@@ -609,5 +609,381 @@ area of square:16
 15)
 
 
+Single Inheritance
+
+
+import java.util.*;
+class Employee
+{
+	int empid;
+	String name;
+	int salary;
+	String address;
+
+	Employee(int id,String n,int s,String a)
+	{
+	empid=id;
+	name=n;
+	salary=s;
+	address=a;
+	}
+}
+
+class Teacher extends Employee
+{
+	String dept;
+	String sub;
+	
+
+
+	Teacher(int empid,String name,int salary,String address,String dept,String sub)
+	{
+		super(empid,name,salary,address);			
+		this.dept=dept;
+		this.sub=sub;
+	}
+
+	void display()
+	{
+		System.out.println("EmpID:"+empid);
+		System.out.println("Name:"+name);
+		System.out.println("Salary:"+salary);
+		System.out.println("Address:"+address);
+		System.out.println("Depertment:"+dept);
+		System.out.println("Subject:"+sub);
+	}
+
+
+}
+class main
+{
+public static void main(String args[])
+{
+	int empid;
+	String name;
+	int salary;
+	String address;
+	String dept;
+	String sub;
+
+Scanner sc=new Scanner(System.in);
+Teacher arr[]=new Teacher[3];
+System.out.println("enter size ");
+int x=sc.nextInt();
+
+for(int i=0;i<x;i++)
+{
+	System.out.println("EmpID:");
+	empid=sc.nextInt();
+	System.out.println("Name:");
+	name=sc.next();
+	System.out.println("Salary:");
+	salary=sc.nextInt();
+	System.out.println("Address:");
+	address=sc.next();
+	System.out.println("Department:");
+	dept=sc.next();
+	System.out.println("Subject:");
+	sub=sc.next();
+	
+	arr[i]=new Teacher(empid,name,salary,address,dept,sub);
+}
+	for(int i=0;i<x;i++)
+{
+arr[i].display();
+}
+}
+}
+
+
+OUTPUT:
+
+enter size 
+2
+EmpID:
+35
+Name:
+tgfhbg
+Salary:
+5646
+Address:
+rtghy
+Department:
+rthgrt
+Subject:
+erght
+EmpID:
+2
+Name:
+rthrt
+Salary:
+435
+Address:
+rthheh
+Department:
+rth
+Subject:
+dth
+EmpID:35
+Name:tgfhbg
+Salary:5646
+Address:rtghy
+Depertment:rthgrt
+Subject:erght
+EmpID:2
+Name:rthrt
+Salary:435
+Address:rthheh
+Depertment:rth
+Subject:dth
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+16)
+
+
+Multi level Inheritance
+
+
+import java.util.*;
+class Person
+{
+	String name;
+	String gender;
+	String address;
+	int age;
+
+	Person(String n,String g,String ad,int a)
+	{
+	name=n;
+	gender=g;
+	address=ad;
+	age=a;
+	}
+}
+
+class Employee extends Person
+{
+	int empid ;
+	String cname,qualification;
+	int salary;
+	
+
+
+	Employee(String name,String gender,String address,int age,int empid,String cname,String qualification,int salary)
+	{
+		super(name,gender,address,age);			
+		this.empid=empid;
+		this.cname=cname;
+		this.qualification=qualification;
+		this.salary=salary;
+	}
+	
+}
+
+class Teacher extends Employee
+{
+	int teachid;
+	String sub,dept;
+
+	Teacher(String name,String gender,String address,int age,int empid,String cname,String qualification,int salary,int teachid,String sub,String dept)
+	{
+		super(name,gender,address,age,empid,cname,qualification,salary);
+		this.teachid=teachid;
+		this.sub=sub;
+		this.dept=dept;		
+	}
+
+	void display()
+	{
+		System.out.println("<<<<<.......OUTPUT......>>>>>");
+		System.out.println("Name:"+name);
+		System.out.println("Gender:"+gender);
+		System.out.println("Address:"+address);
+		System.out.println("age:"+age);
+		System.out.println("empid:"+empid);
+		System.out.println("company name:"+cname);
+		System.out.println("qualification:"+qualification);
+		System.out.println("Salary:"+salary);
+		System.out.println("Teacher id:"+teachid);
+		System.out.println("Depertment:"+dept);
+		System.out.println("Subject:"+sub);
+	}
+
+}
+
+
+
+class main1
+{
+public static void main(String args[])
+{
+
+	String name;
+	String gender;
+	String address;
+	int age;
+	int empid;
+	String cname;
+	String qualification;
+	int salary;
+	int teachid;
+	String dept;
+	String sub;
+
+Scanner sc=new Scanner(System.in);
+Teacher arr[]=new Teacher[3];
+System.out.println("enter size ");
+int n=sc.nextInt();
+
+for(int i=0;i<n;i++)
+{
+
+	System.out.println("Name:");
+	name=sc.next();
+	System.out.println("gender:");
+	gender=sc.next();
+	System.out.println("Address:");
+	address=sc.next();
+	System.out.println("Age:");
+	age=sc.nextInt();
+	System.out.println("EmpID:");
+	empid=sc.nextInt();
+	System.out.println("Company name:");
+	cname=sc.next();
+	System.out.println("Qualification:");
+	qualification=sc.next();
+	System.out.println("Salary:");
+	salary=sc.nextInt();
+	System.out.println("Teacher id:");
+	teachid=sc.nextInt();
+	System.out.println("Department:");
+	dept=sc.next();
+	System.out.println("Subject:");
+	sub=sc.next();
+	
+	arr[i]=new Teacher( name,gender,address,age,empid,cname,qualification,salary,teachid,dept,sub);
+}
+	for(int i=0;i<n;i++)
+{
+arr[i].display();
+}
+}
+}
+
+
+OUTPUT:
+
+
+enter size 
+2
+Name:
+rgdx
+gender:
+fdg
+Address:
+dfhdg
+Age:
+3
+EmpID:
+23    
+Company name:
+ewgr
+Qualification:
+rfdg
+Salary:
+435
+Teacher id:
+43 
+Department:
+fdh
+Subject:
+dfh
+Name:
+dsgh
+gender:
+dh
+Address:
+dh
+Age:
+54
+EmpID:
+5   
+Company name:
+rdg
+Qualification:
+reg
+Salary:
+46
+Teacher id:
+56
+Department:
+dfh
+Subject:
+dh
+<<<<<.......OUTPUT......>>>>>
+Name:rgdx
+Gender:fdg
+Address:dfhdg
+age:3
+empid:23
+company name:ewgr
+qualification:rfdg
+Salary:435
+Teacher id:43
+Depertment:dfh
+Subject:fdh
+<<<<<.......OUTPUT......>>>>>
+Name:dsgh
+Gender:dh
+Address:dh
+age:54
+empid:5
+company name:rdg
+qualification:reg
+Salary:46
+Teacher id:56
+Depertment:dh
+Subject:dfh
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
