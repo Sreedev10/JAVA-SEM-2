@@ -949,6 +949,173 @@ Depertment:dh
 Subject:dfh
 
 
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+17)
+
+Method Overriding
+
+
+import java.util.*;
+class Shapes
+{
+public double area()
+{
+return 0;
+}
+}
+	
+class Rectangle extends Shapes
+{
+private double l;
+private double w;
+
+public Rectangle(double l,double w)
+{
+this.l=l;
+this.w=w;
+}
+
+public double area()
+{
+return l*w;
+}
+}
+
+class Circle extends Shapes
+{
+private double r;
+
+public Circle(double r)
+{
+this.r=r;
+}
+
+public double area()
+{
+return 3.14*r*r;
+}
+}
+
+
+
+class Square extends Shapes
+{
+private double side;
+
+public Square(double side)
+{
+this.side=side;
+
+}
+public double area()
+{
+return side*side;
+}
+}
+
+public class Overriding
+{
+public static void main(String args[])
+{
+Shapes rect=new Rectangle(5,4);
+Shapes cir=new Circle(7);
+Shapes sqr=new Square(6);
+
+	System.out.println("Area of rectangle:"+rect.area());
+	System.out.println("Area of circle:"+cir.area());
+	System.out.println("Area of square:"+sqr.area());
+}
+}
+
+
+OUTPUT:
+
+
+Area of rectangle:20.0
+Area of circle:153.86
+Area of square:36.0
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+18)
+
+Abstract Class
+
+
+abstract class Shape {
+    abstract void area();
+}
+
+class Rect extends Shape {
+    int length, breadth;
+
+
+    Rect(int l, int b) {
+        length = l;
+        breadth = b;
+    }
+
+
+    void area() {
+        System.out.println("Area of Rectangle: " + (length * breadth));
+    }
+}
+
+class Circle extends Shape {
+    int radius;
+
+
+    Circle(int r) {
+        radius = r;
+    }
+
+
+    void area() {
+        System.out.println("Area of Circle: " + (3.14 * radius * radius));
+    }
+}
+
+class Square extends Shape {
+    int side;
+
+
+    Square(int s) {
+        side = s;
+    }
+
+
+    void area() {
+        System.out.println("Area of Square: " + (side * side));
+    }
+}
+
+public class Main {
+    public static void main(String args[]) {
+        Rect r = new Rect(4, 5);     
+        Circle c = new Circle(3);   
+        Square s = new Square(4);  
+
+        r.area();  
+        c.area(); 
+        s.area(); 
+    }
+}
+
+
+OUTPUT:
+
+
+Area of Rectangle: 20
+Area of Circle: 28.259999999999998
+Area of Square: 16
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+
+19)
 
 
 
