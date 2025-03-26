@@ -1117,10 +1117,147 @@ Area of Square: 16
 
 19)
 
+Interface
+
+
+import java.util.*;
+
+interface Shapes {
+    double area();
+    double perimeter();
+}
+
+class Rectangle implements Shapes {
+    double l;
+    double w;
+
+    public Rectangle(double l, double w) {
+        this.l = l;
+        this.w = w;
+    }
+
+    public double area() {
+        return l * w;
+    }
+
+    public double perimeter() {
+        return 2 * (l + w);
+    }
+}
+
+class Circle implements Shapes {
+    double r;
+
+    public Circle(double r) {
+        this.r = r;
+    }
+
+    public double area() {
+        return 3.14 * r * r;
+    }
+
+    public double perimeter() {
+        return 2 * 3.14 * r;
+    }
+}
+
+class Square implements Shapes {
+    private double side;
+
+    public Square(double side) {
+        this.side = side;
+    }
+
+    public double area() {
+        return side * side;
+    }
+
+    public double perimeter() {
+        return 4 * side;
+    }
+}
+
+public class Interface {
+    public static void main(String args[]) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+
+        while (true) {
+            System.out.println("Menu: ");
+            System.out.println("1. Area of Circle");
+            System.out.println("2. Area of Rectangle");
+            System.out.println("3. Area of Square");
+            System.out.println("4. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+
+            if (choice == 1) {
+                System.out.println("Enter radius: ");
+                double r = sc.nextDouble();
+                Shapes shape = new Circle(r);
+                System.out.println("Area: " + shape.area());
+                System.out.println("Perimeter: " + shape.perimeter());
+            } else if (choice == 2) {
+                System.out.println("Enter length: ");
+                double l = sc.nextDouble();
+                System.out.println("Enter width: ");
+                double w = sc.nextDouble();
+                Shapes shape = new Rectangle(l, w);
+                System.out.println("Area: " + shape.area());
+                System.out.println("Perimeter: " + shape.perimeter());
+            } else if (choice == 3) {
+                System.out.println("Enter side length: ");
+                double side = sc.nextDouble();
+                Shapes shape = new Square(side);
+                System.out.println("Area: " + shape.area());
+                System.out.println("Perimeter: " + shape.perimeter());
+            } else if (choice == 4) {
+                System.out.println("Exiting...");
+                break;
+            } else {
+                System.out.println("Invalid choice! Try again.");
+            }
+        }
+    }
+}
+
+
+OUTPUT:
 
 
 
 
+Menu: 
+1. Area of Circle
+2. Area of Rectangle
+3. Area of Square
+4. Exit
+Enter your choice: 1
+Enter radius: 
+3
+Area: 28.259999999999998
+Perimeter: 18.84
+Menu: 
+1. Area of Circle
+2. Area of Rectangle
+3. Area of Square
+4. Exit
+Enter your choice: 3
+Enter side length: 
+5
+Area: 25.0
+Perimeter: 20.0
+Menu: 
+1. Area of Circle
+2. Area of Rectangle
+3. Area of Square
+4. Exit
+Enter your choice:
+
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
